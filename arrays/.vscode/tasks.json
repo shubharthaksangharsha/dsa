@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Python with input and output redirection",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "${file}",
+                "<",
+                "inputf.in",
+                ">",
+                "outputf.in"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Runs Python script with input redirection and output redirection"
+        }
+    ]
+}
