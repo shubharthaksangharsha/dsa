@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+temp*
+coderunner.py
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# C++
+*.out
+*.o
+*.obj
+*.exe
+*.gch
+*.class
+
+# Build and debug folders
+build/
+dist/
+*.log
+*.stackdump
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.tmp
+*.bak
+*.swp
+*.lock
+
+# Compressed or archived files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
