@@ -11,3 +11,4 @@
 | 7    | Remove Duplicates from Linked List  | [Solution](remove_duplicates.py) |
 | 8    | Sort 0s, 1s, and 2s in Linked List  | [Solution](sort_0s_1s_2s_in_list.py) |
 | 9    | Merge Linked Lists                  | [Solution](merge_ll.py) |
+| 10   | Check if Linked List is Palindrome  | [Solution](check_pallindrome.py) |

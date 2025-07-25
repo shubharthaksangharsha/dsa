@@ -1,16 +1,25 @@
 from mylink import MyLinkedList, Node
 from typing import Optional
 
-def merge(head: Node) -> Optional[Node]: 
-    pass 
+def merge(head1: Optional[Node], head2: Optional[Node]) -> Optional[Node]: 
+    if not head1:
+        return head2 
+    if not head2:
+        return head1 
+    temp_a, temp_b = head1, head2 
+    while temp_a and temp_b: 
+        if temp_a.data <= temp_b.data:  
+            temp
+            temp_a = temp_a.next  
+        else: 
+            temp_b = temp_b.next 
+
+        
+
 
 if __name__ == '__main__':
-    head = Node(1); head.next = Node(5); head.next.next = Node(1); head.next.next.next = Node(1) 
-    MyLinkedList().printlist(head)
-    # MyLinkedList().printlist(head=(remove_duplicates_sorted(head=Node(2))))
-    # head = remove_duplicates_sorted(head)
-    head = remove_duplicates_unsorted(head)
-    MyLinkedList().printlist(head)
-    # print(check_circular_list(head=head))
-    # print(check_circular_list(head=dummy))
-    
+    mylink, mylink2  = MyLinkedList(), MyLinkedList()
+    mylink.populate(start=1, end=5)
+    mylink2.populate(start=7, end=10)   
+    mylink.printlist()
+    mylink2.printlist()
