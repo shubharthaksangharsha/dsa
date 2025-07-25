@@ -15,4 +15,11 @@
 | 9    | Merge Linked Lists                  | [Solution](linkedlist/merge_ll.py) |
 | 10   | Check if Linked List is Palindrome  | [Solution](linkedlist/check_pallindrome.py) |
 
+## Array Problems
+
+| S.No | Problem Name         | Solution Link                  |
+|------|---------------------|-------------------------------|
+| 1    | Find Largest        | [Solution](arrays/findlargest.py)     |
+| 2    | Find Second Largest | [Solution](arrays/secondlargest.py)   |
+
 
