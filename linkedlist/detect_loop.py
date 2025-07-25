@@ -4,7 +4,7 @@ from typing import Optional
 #1. Detect,  2. Beginning node of the  loop.      3. Remove Cycle  
 
 #1. Detect the loop 
-def detect_cycle(head: Node) -> bool: 
+def detect_cycle(head: Optional[Node]) -> bool: 
     if head is None: 
         return False 
     
@@ -27,7 +27,7 @@ def detect_cycle(head: Node) -> bool:
 
     return False  
 
-def get_starting(head: None) -> Optional[Node]:
+def get_starting(head: Optional[Node]) -> Optional[Node]:
     def helper(head) -> Optional[Node]:
         slow, fast = head, head 
         while fast and fast.next: 
@@ -53,10 +53,12 @@ def get_starting(head: None) -> Optional[Node]:
     
     return None 
 
-def remove_loop(head: Node) -> None: 
+def remove_loop(head: Optional[Node]) -> None: 
     if head is None:
         return 
     start_loop = get_starting(head)
+    if start_loop is None: 
+        return 
     temp = start_loop 
 
     while temp.next != start_loop: 
