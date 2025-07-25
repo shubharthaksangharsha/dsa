@@ -1,9 +1,10 @@
 from mylink import MyLinkedList, Node
 from typing import Optional
 
-def populate(attach_node: Node, tail: Node) -> None: 
+def populate(attach_node: Node, tail: Node) -> Node: 
     tail.next = attach_node
     tail = tail.next
+    return tail 
 
 def sort_012(head: Node) -> Optional[Node]:
     #using data 
@@ -35,37 +36,22 @@ def sort_012(head: Node) -> Optional[Node]:
     temp, zero_head, one_head, two_head = head, Node(-1), Node(-1), Node(-1) 
     zero_tail, one_tail, two_tail = zero_head, one_head, two_head 
     while temp: 
-        print('temp: ', temp.data)
-        print('beffore****')
-        MyLinkedList().printlist(head=zero_head)
-        MyLinkedList().printlist(head=one_head)
-        MyLinkedList().printlist(head=two_head)
         if temp.data == 0:
-            populate(temp, zero_tail)
+            zero_tail = populate(temp, zero_tail)
         elif temp.data == 1:
-            populate(temp,  one_tail)
+            one_tail = populate(temp,  one_tail)
         else:
-            populate(temp, two_tail)
+            two_tail = populate(temp, two_tail)
         temp = temp.next  
-        print('after****')
-        MyLinkedList().printlist(head=zero_head)
-        MyLinkedList().printlist(head=one_head)
-        MyLinkedList().printlist(head=two_head)
-
-    print('loops ends')
-    MyLinkedList().printlist(head=zero_head)
-    MyLinkedList().printlist(head=one_head)
-    MyLinkedList().printlist(head=two_head)
     
-    if one_head != None: 
+    if one_head.next: 
         zero_tail.next = one_head.next 
     else:  
         zero_tail.next = two_head.next 
 
     one_tail.next = two_head.next 
     two_tail.next = None 
-    # head = zero_head.next 
-    # del one_head, two_head, zero_head
+    head = zero_head.next 
     return head 
 
 
