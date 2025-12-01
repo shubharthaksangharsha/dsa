@@ -27,136 +27,51 @@
 
 
 
----
+--- 
 
-✍️ Essay 1: Is COMPAS biased? Is it unfairly biased?
+# Do LLMs understand language in the same way as humans? Discuss the differences between LLMs in general and humans in general.
 
-Introduction
+A recurring theme throughout this course is that surface-level behavioural similarity between humans and large language models (LLMs) should not be mistaken for shared cognitive architecture. Nowhere is this clearer than in the question of linguistic understanding. While contemporary LLMs such as GPT-4 generate syntactically sophisticated, context-appropriate sentences, the mechanisms by which they do so diverge fundamentally from the mechanisms described in human psycholinguistics. Drawing on the Chomsky/Systematicity lecture, the Language & Thought slides, and the Dual Process slides, I argue that LLMs do not understand language in the same way humans do, even if their outputs can be deceptively similar.
 
-The COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) algorithm is used in U.S. courts to predict the likelihood of reoffending. This case raises concerns about algorithmic bias and fairness. To decide whether COMPAS is unfairly biased, we must distinguish between statistical bias and social unfairness, and question whether understanding its process is essential for ethical judgment.
+1. Systematicity and Productivity: Chomsky's Argument Against Associative Models
 
-Main Discussion
+The Chomsky slides emphasised two core features of human linguistic competence: systematicity and productivity. Systematicity refers to the fact that if a human understands “3 + 4 = 7,” they automatically grasp that “4 + 3 = 7.” Likewise, if one understands the sentence “The dog chased the cat,” they also grasp “The cat was chased by the dog.” This structural generalisation is not learned by memorising string–string associations; it reflects mastery of rules or principles that govern allowable combinations.
 
-ProPublica’s 2016 investigation revealed that COMPAS systematically overestimated recidivism risk for Black defendants and underestimated it for White defendants. This shows unequal false positive and false negative rates. From a fairness perspective, this means outcomes differ by race even when criminal records are similar.
+Similarly, productivity reflects the capacity to generate indefinitely many new sentences from a finite set of rules. In class, we examined centre-embedding structures such as:
 
-Northpointe, the company behind COMPAS, argued that their system is “calibrated” — meaning that among people given the same risk score, the probability of reoffending is roughly equal across groups. However, calibration and equal error rates cannot both be satisfied when base rates differ. This highlights a conflict between mathematical fairness criteria and social justice fairness.
+“The mouse that the cat that the dog painted taught sang.”
 
-Whether understanding the algorithm’s internal process is necessary depends on what we value. If fairness is about outcomes, then we can judge bias statistically. But if fairness involves intent or mechanism, we must understand the internal workings — such as which variables (e.g., race proxies) influence predictions.
+Humans struggle to process such sentences, but crucially they recognise them as syntactically well-formed because they possess an internalised system of hierarchical rules. This is exactly the point: human linguistic competence presupposes tree-structured, symbolic representations.
 
-Conclusion
+LLMs, by contrast, do not manipulate trees or rules. As the PPT put it: “LLMs do not manipulate symbols according to rules; syntax and semantics are not distinguished.” They are trained to predict the next most probable token given millions or billions of prior examples. When an LLM “understands” the Smarties task or generates a centre-embedded sentence, it is doing so through high-dimensional similarity structures, not through rule-based transformations. In the Chomsky slides, this is described as holistic similarity space, where relationships are encoded as distances rather than discrete features.
 
-COMPAS is statistically biased and socially unfair because its predictions reinforce existing racial disparities. Even without full transparency, unequal outcomes across groups show unfair bias. Understanding the process deepens the ethical critique but is not required to see the harm.
+Therefore, while LLMs can approximate the outputs of rule-governed systems, there is nothing in their functional architecture that implements the combinatorial, algebraic properties underlying human language.
 
+2. Linguistic Innateness and the Poverty of the Stimulus
 
----
+Another point emphasised in lecture was the poverty of the stimulus argument: children reliably acquire complex syntactic principles despite receiving limited, noisy, and inadequate data. Because trial-and-error association cannot explain this, Chomsky concludes that the human mind must contain innate, domain-specific constraints that generate linguistic hypotheses.
 
-✍️ Essay 2: What is being “aligned” in the alignment problem?
+LLMs, however, sidestep poverty of stimulus entirely by consuming datasets on a scale no human encounters. They succeed precisely because they do not learn like children: they rely on brute-force statistical coverage rather than inference under innate constraints. This difference is not merely methodological; it reflects a fundamentally different kind of cognitive process.
 
-Introduction
+3. Strings vs Trees: What LLMs Encode
 
-The “alignment problem” in AI ethics asks whether artificial intelligence systems act according to human values. To understand what is “being aligned,” we must identify what AI is aligned with — human goals, moral norms, or social outcomes.
+One of the most illuminating slides asked, “Strings or trees. Is Chomsky wrong?” Although LLMs operate exclusively on linear token sequences, linguistic structure in humans is hierarchical. Surprisingly, some tree-like dependencies emerge in LLM internal layers, but as the slides stressed, these are not explicitly represented. They are statistical artefacts detectable only through diagnostic probing, not components of the model’s functional computation.
 
-Main Discussion
+This means LLMs simulate the outputs of a hierarchical grammar without actually employing one—a crucial difference. Humans infer structure; LLMs approximate it.
 
-Alignment concerns how AI’s objective functions or reward signals reflect human intentions. In practice, AI agents are optimized to maximize numerical rewards or accuracy. But human values — such as fairness, compassion, or justice — are complex, context-dependent, and often conflicting.
+4. Dual-Process Cognition: Humans Use System 2, LLMs Don’t
 
-Philosophically, alignment means ensuring that the behavior of an AI corresponds to the intentions of its designers or users. Misalignment occurs when systems achieve objectives in unintended or harmful ways (e.g., a recommendation algorithm maximizing engagement but promoting misinformation).
+The Dual Process PPT highlighted another deep architectural difference. Human language comprehension often requires System 2 reasoning: effortful, working-memory-dependent manipulation of hypotheticals, ambiguities, and syntactic embeddings. The frontal cortex supports “active maintenance,” enabling us to revisit assumptions, reinterpret ambiguous structures, and revise semantic commitments mid-sentence.
 
-Moral alignment extends beyond technical optimization. It involves normative reasoning: AI should respect ethical principles that humans endorse collectively. Hence, alignment is not only about the relation between “AI goals” and “human commands,” but also about embedding moral reasoning and accountability into design.
+LLMs lack such mechanisms. Their processing is unidirectional and automatic, resembling a perpetual System 1 process. Chain-of-thought prompting only mimics System 2 reasoning—the model is still generating one token at a time with no genuine active maintenance. The slides emphasised that unlike humans, LLMs cannot decouple cognition from immediate input—there is no analogue of stimulus-independent prefrontal activity.
 
-Conclusion
+Thus, even when an LLM produces a multi-step explanation, it is not “thinking” in the way humans do; it is reproducing statistically correlated textual patterns.
 
-What is being “aligned” is the relationship between machine goals and human values. Achieving alignment means creating systems that not only follow instructions but also promote ethically acceptable and socially beneficial outcomes.
+5. Conclusion: Behavioural Similarity Without Cognitive Equivalence
 
+Across all three relevant PPTs, the same conclusion emerges: LLMs do not understand language as humans do. Humans rely on innate rule-governed generative capacities, hierarchical syntactic structure, and dual-process cognitive architectures supporting active maintenance and metalinguistic reasoning. LLMs, by contrast, rely on similarity-based pattern extraction from massive corpora, lack linguistic modularity, and possess no mechanism analogous to human System 2 reasoning.
 
----
-
-✍️ Essay 3: Is there an algorithmic solution to the alignment problem? (Klein & Kasirzadeh)
-
-Introduction
-
-Klein and Kasirzadeh argue that alignment cannot be fully solved through algorithms alone. The question is whether ethical alignment — ensuring AI acts according to human values — can be achieved by computation, or whether it requires continuous human involvement.
-
-Main Discussion
-
-They introduce the idea of asymmetric necessitation — the relationship between facts about algorithms and moral facts. In simple terms, even if an algorithm perfectly tracks human preferences, moral correctness does not necessarily follow. The connection is one-way: moral truths might determine what an aligned system should do, but not the reverse.
-
-This implies that no purely technical method — no optimization, loss function, or reward shaping — can guarantee moral correctness. Moral reasoning involves context, interpretation, and judgment that extend beyond data patterns.
-
-Algorithmic tools can approximate human preferences, but human oversight, deliberation, and institutional ethics remain essential. Thus, alignment is partly social and political, not just computational.
-
-Conclusion
-
-There is no purely algorithmic solution to the alignment problem. As Klein and Kasirzadeh show, alignment depends on human moral reasoning. Algorithms can assist but cannot replace ethical deliberation.
-
-
----
-
-✍️ Essay 4: Can there be such a thing as “algorithm washing”?
-
-Introduction
-
-“Algorithm washing” refers to the practice of using algorithms to appear objective or fair while actually hiding bias, responsibility, or unethical practices. It parallels “greenwashing” — when companies exaggerate environmental responsibility to look good publicly.
-
-Main Discussion
-
-Organizations may claim that algorithmic systems make “neutral” decisions, thus distancing themselves from accountability. For example, a company may use automated hiring tools and blame discrimination on the “algorithm,” rather than on biased data or design choices.
-
-This is problematic because algorithms reflect the values and assumptions of their creators. By presenting them as impartial, institutions avoid scrutiny and ethical responsibility. Algorithm washing thus obscures moral agency and undermines trust.
-
-The phenomenon highlights the importance of transparency, explainability, and human oversight. Ethical AI governance requires acknowledging that every model involves normative choices — in data selection, labeling, and evaluation metrics.
-
-Conclusion
-
-Yes, algorithm washing exists. It happens when organizations use algorithms to shift or hide responsibility under a façade of objectivity. Recognizing this helps promote accountability and genuine fairness in AI systems.
-
-
----
-
-
-✍️ Essay 5: Are techniques such as LIME or SHAPLEY adequate to detect and diagnose unfairness or discrimination?
-
-Introduction
-
-Techniques like LIME (Local Interpretable Model-agnostic Explanations) and SHAP (SHapley Additive exPlanations) are widely used to explain machine learning models. They aim to make AI systems more interpretable by showing how input features contribute to a model’s output. However, the question is whether interpretability tools alone can truly detect or diagnose unfairness and discrimination.
-
-Main Discussion
-
-LIME and SHAP provide local explanations, showing how features influence a single prediction. While this helps users understand individual decisions, it doesn’t reveal broader systemic biases. Fairness issues often occur at the dataset or group level — for instance, when a model performs differently across gender or racial groups.
-
-LIME and SHAP assume that the model’s internal logic is reasonable and that fairness can be inferred from feature importance. But explainability is not the same as fairness: a transparent bias is still a bias. These tools show “how” a model decided, not “whether it should have decided that way.” Detecting discrimination requires fairness metrics (like demographic parity, equal opportunity) and social context beyond mathematics.
-
-Moreover, these tools rely on approximations that can be unstable: small changes in data or random seeds may change the explanation. Therefore, depending solely on them may lead to false confidence in fairness.
-
-Conclusion
-
-LIME and SHAP are helpful but insufficient. They promote interpretability, not fairness. Detecting discrimination requires combining explainability with fairness auditing, bias testing, and ethical judgment by humans.
-
-
----
-
-✍️ Essay 6: Can an AI make genuinely moral decisions if humans are not in the decision-making loop? If so, who is responsible for the consequences?
-
-Introduction
-
-Moral decision-making involves reasoning about right and wrong, considering intent, outcome, and responsibility. The question is whether AI — operating without human oversight — can make truly moral decisions, and if so, who bears responsibility for those actions.
-
-Main Discussion
-
-Current AI systems act through pattern recognition and optimization, not moral reasoning. They lack intentionality, consciousness, and empathy. Even when trained on moral datasets or human feedback, they only simulate moral reasoning, not understand it.
-
-For example, a self-driving car choosing between two harmful outcomes may make a utilitarian choice based on programmed logic, not ethical deliberation. The decision may appear moral but is actually a reflection of human-coded priorities or data biases. Thus, moral responsibility cannot rest with the machine.
-
-Responsibility lies with human agents — developers, designers, policymakers — who create and deploy AI. The “human in the loop” provides ethical oversight and context that algorithms cannot replicate. Without this, decisions risk being ethically blind even if technically accurate.
-
-Some argue for machine moral agency — the idea that advanced AIs could one day possess autonomy deserving moral responsibility. However, as long as they lack genuine understanding and accountability, moral responsibility remains human.
-
-Conclusion
-
-AI cannot make genuinely moral decisions without human involvement. While it can execute ethically-informed rules, it lacks true moral understanding. Therefore, humans remain responsible for the outcomes of AI systems, both legally and ethically.
-
-
----
-
+LLMs can perform understanding, but they do not possess understanding in the cognitive sense articulated in class.
+--- 
 
 

@@ -6,14 +6,7 @@ def merge(head1: Optional[Node], head2: Optional[Node]) -> Optional[Node]:
         return head2 
     if not head2:
         return head1 
-    temp_a, temp_b = head1, head2 
-    while temp_a and temp_b: 
-        if temp_a.data <= temp_b.data:  
-            temp
-            temp_a = temp_a.next  
-        else: 
-            temp_b = temp_b.next 
-
+    
         
 
 
